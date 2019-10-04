@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+// import useStyles from './styles'
+import Group from './components/Group'
+import { Button } from '@material-ui/core'
 
 function App() {
+
+  const [values, setValues] = useState([]);
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>QueryBuider</h1>
+      <Group setQuery={setValues} />
+      <Button variant="contained" onClick={() => alert(JSON.stringify(values))} style={{ marginLeft: 10 }}>Ver Query</Button>
     </div>
   );
 }
